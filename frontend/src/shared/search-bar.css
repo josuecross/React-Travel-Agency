@@ -1,0 +1,23 @@
+.form__group span {
+    font-size:1.8rem;
+    color: #ee6e6e
+}
+
+.form__group input {
+    border: none;
+    font-size:0.9rem;
+    color:var(--heading-color);
+    font-weight:500;
+}
+
+.form__group input:focus {
+    outline:none;
+}
+
+.form__group h6 {
+    margin-bottom: 0;
+}
+
+.form__group-fast {
+    border-right: 2px solid #ddd
+}
