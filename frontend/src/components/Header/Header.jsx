@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef, useEffect} from "react";
 import { Container, Row, Button } from "reactstrap";
 import { NavLink, Link } from "react-router-dom";
 import logo from "../../assets//images/logo.png";
@@ -19,16 +19,37 @@ const nav__links = [
   },
 ];
 
+
 const Header = () => {
+
+  const headerRef = useRef(null);
+
+  const stickyHeaderFunc = () => {
+    window.addEventListener("scroll", () => {
+      if(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        headerRef.current.classList.add('sticky__header')
+      }
+      else {
+        headerRef.current.classList.remove('sticky__header')
+      }
+    });
+  }
+
+  useEffect(() => {
+    stickyHeaderFunc();
+
+    return window.removeEventListener("screoll", stickyHeaderFunc);
+  })
+
   return (
     <>
-      <header className="header">
+      <header className="header" ref={headerRef}>
         <Container>
           <Row>
             <div className="nav__wrapper d-flex align-items-center justify-content-between">
               {/* ================ logo  ================*/}
-              <div className="logo">
-                <img src={logo} alt="" />
+              <div>
+                <img src={logo} alt="" className="logo" />
               </div>
               {/* ================ logo  end ================*/}
 
@@ -54,7 +75,7 @@ const Header = () => {
                     <Link to="/login">Login</Link>
                   </Button>
                   <Button className="btn primary__btn">
-                    <Link to="/register">Login</Link>
+                    <Link to="/register">Register</Link>
                   </Button>
                 </div>
                 <span className="mobile__menu">

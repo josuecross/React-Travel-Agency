@@ -5,11 +5,15 @@ import heroImg01 from "../assets/images/hero-img01.jpg";
 import heroImg02 from "../assets/images/hero-img02.jpg";
 import heroVideo from "../assets/images/hero-video.mp4";
 import worldImg from "../assets/images/world.png";
+import experienceImg from '../assets/images/experience.png';
+
 import Subtitle from "./../shared/Subtitle";
-import SearchBar from  "./../shared/SearchBar";
+import SearchBar from "./../shared/SearchBar";
 import ServiceList from "../services/ServiceList";
 import FeaturedTourList from "../components/Featured-tour/FeaturedTourList";
-
+import MasonryImagesGallery from "../components/image-gallery/MasonryImagesGallery";
+import Testimonials from "../components/Testimonial/Testimonials";
+import Newsletter from "../shared/Newsletter";
 
 const Home = () => {
   return (
@@ -25,9 +29,9 @@ const Home = () => {
                 </div>
                 <h1>Traveling opens the door to creating <span className="highlight"> memories</span></h1>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                  Pariatur quam eum sint, dicta labore omnis repellat dolores 
-                  maiores, minus maxime id, velit quibusdam repudiandae placeat. 
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Pariatur quam eum sint, dicta labore omnis repellat dolores
+                  maiores, minus maxime id, velit quibusdam repudiandae placeat.
                   Distinctio magnam fuga repudiandae impedit.
                 </p>
               </div>
@@ -48,7 +52,7 @@ const Home = () => {
               </div>
             </Col>
 
-            <SearchBar/>
+            <SearchBar />
           </Row>
         </Container>
       </section>
@@ -61,7 +65,7 @@ const Home = () => {
               <h5 className="services__subtitle">What we server</h5>
               <h2 className="services__title">We offer our best services</h2>
             </Col>
-            <ServiceList/>
+            <ServiceList />
           </Row>
         </Container>
       </section>
@@ -74,15 +78,93 @@ const Home = () => {
         <Container>
           <Row>
             <Col lg="12" className="mb-5">
-              <Subtitle subtitle={"Explore"}/>
+              <Subtitle subtitle={"Explore"} />
               <h2 className="featured__tour-title">Our featured tours</h2>
             </Col>
-            <FeaturedTourList/>
+            <FeaturedTourList />
           </Row>
         </Container>
       </section>
       { /* ================ featured section ends ================= */}
-          
+      { /* ================ experience section starts ================= */}
+      <section>
+        <Container>
+          <Row>
+            <Col lg="6">
+              <div className="experience__content">
+                <Subtitle subtitle={"Experience"} />
+                <h2>
+                  With our all experience <br /> we will serve you.
+                </h2>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  <br />
+                  Quas eliquam, sed diam euismod tempor id, ullamcorper
+                </p>
+              </div>
+              <div className="counter__wrapper d-flex align-items-center gap-5">
+                <div className="counter__box">
+                  <span>12K+</span>
+                  <h6>Successful Trip</h6>
+                </div>
+                <div className="counter__box">
+                  <span>2K+</span>
+                  <h6>Regular clients</h6>
+                </div>
+                <div className="counter__box">
+                  <span>15</span>
+                  <h6>Years experience</h6>
+                </div>s
+              </div>
+            </Col>
+            <Col lg="6">
+              <div className="experience__img">
+                <img src={experienceImg} alt="" />
+              </div>
+            </Col>
+          </Row>
+        </Container>
+
+      </section>
+      { /* ================ featured section ends ================= */}
+
+      { /* ================ gallery section starts ================= */}
+      <section>
+        <Container>
+          <Row>
+            <Col lg="12">
+              <Subtitle subtitle={"Gallery"}/>
+              <h2 className="gallery__title">Visit our Customers Tour Gallery</h2>
+            </Col>
+            <Col lg="12">
+              <MasonryImagesGallery /> 
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      { /* ================ gallery section ends ================= */}
+
+      { /* ================ Testimonial section starts ================= */}
+
+      <section>
+        <Container>
+          <Row>
+            <Col lg="12">
+              <Subtitle subtitle={"Fans Love"}/>
+              <h2 className="testimonial__title">What our fans say about us</h2>
+            </Col>
+            <Col lg="12">
+              <Testimonials />
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      { /* ================ Testimonial section ends ================= */}
+      
+      <Newsletter/>
+
+
     </>
   );
 };
